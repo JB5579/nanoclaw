@@ -7,7 +7,7 @@
 
 // slack
 
-// telegram
-import './telegram.js';
+// telegram — using StoryKeeper extended channel (includes all NanoClaw base features)
+import './storykeeper-telegram.js';
 
 // whatsapp
