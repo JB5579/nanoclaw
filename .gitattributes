@@ -1,0 +1,9 @@
+# NanoClaw — line-ending policy
+#
+# Shell scripts MUST be LF. They are executed inside Linux containers
+# (container/entrypoint.sh is COPY'd into the agent image) and sourced by bash
+# on the host. On Windows, core.autocrlf=true would otherwise check them out as
+# CRLF, which corrupts the shebang — the agent container then fails on start
+# with: "[FATAL tini] exec /app/entrypoint.sh failed: No such file or directory".
+# Forcing LF here keeps the checkout correct on every platform.
+*.sh text eol=lf
